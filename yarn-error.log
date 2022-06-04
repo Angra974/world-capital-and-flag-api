@@ -1,0 +1,66 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\yarn\bin\yarn.js install
+
+PATH: 
+  C:\Users\moi\bin;D:\Program Files\Git\mingw64\bin;D:\Program Files\Git\usr\local\bin;D:\Program Files\Git\usr\bin;D:\Program Files\Git\usr\bin;D:\Program Files\Git\mingw64\bin;D:\Program Files\Git\usr\bin;C:\Users\moi\bin;C:\Python310\Scripts;C:\Python310;C:\Program Files\Redis;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\WINDOWS\System32\OpenSSH;D:\Program Files\FME;C:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\AOMEI\AOMEI Backupper\6.5.1;C:\Program Files\nodejs;C:\ProgramData\ComposerSetup\bin;D:\Program Files\Git\cmd;C:\Program Files\dotnet;D:\Ruby31-x64\bin;C:\Program Files (x86)\VMware\VMware Workstation\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\WINDOWS\System32\OpenSSH;C:\ProgramData\chocolatey\bin;D:\Program Files\FME;C:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\Yarn\bin;D:\Program Files\Git\cmd;C:\Users\moi\AppData\Roaming\Composer\vendor\bin;D:\laragon\bin;D:\laragon\bin\apache\httpd-2.4.35-win64-VC15\bin;D:\laragon\bin\composer;D:\laragon\bin\git\bin;D:\laragon\bin\git\cmd;D:\laragon\bin\git\mingw64\bin;D:\laragon\bin\git\usr\bin;D:\laragon\bin\laragon\utils;D:\laragon\bin\mysql\mysql-5.7.24-winx64\bin;D:\laragon\bin\nginx\nginx-1.16.0;D:\laragon\bin\ngrok;D:\laragon\bin\nodejs\node-v12;D:\laragon\bin\php\php-8.0.6-Win32-vs16-x64;D:\laragon\bin\putty;D:\laragon\bin\redis\redis-x64-3.2.100;D:\laragon\bin\telnet;D:\laragon\usr\bin;C:\Users\moi\AppData\Local\Microsoft\WindowsApps;D:\Program Files\JetBrains\WebStorm 2019.3.4\bin;D:\Program Files\JetBrains\PhpStorm 2019.3.4\bin;C:\Users\moi\AppData\Local\GitHubDesktop\bin;D:\Users\moi\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Redis;C:\Users\moi\AppData\Local\Microsoft\WindowsApps;C:\Users\moi\AppData\Roaming\npm;D:\Program Files\JetBrains\PyCharm 2021.3.1\bin;D:\Program Files\Git\usr\bin\vendor_perl;D:\Program Files\Git\usr\bin\core_perl
+
+Yarn version: 
+  1.22.17
+
+Node version: 
+  14.18.1
+
+Platform: 
+  win32 x64
+
+Trace: 
+  SyntaxError: D:\laragon\www\_project\world-capital-and-flag-api\package.json: Unexpected string in JSON at position 691
+      at JSON.parse (<anonymous>)
+      at C:\Program Files\nodejs\node_modules\yarn\lib\cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (C:\Program Files\nodejs\node_modules\yarn\lib\cli.js:310:30)
+      at C:\Program Files\nodejs\node_modules\yarn\lib\cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "world-capital-and-flag-api",
+    "version": "1.0.0",
+    "description": "Question our api to get the flag or the capital town of every country in the world.",
+    "main": "server.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/Angra974/world-capital-and-flag-api.git"
+    },
+    "keywords": [
+      "world",
+      "flag",
+      "api"
+    ],
+     "dependencies": {
+      "body-parser": "^1.19.0",
+      "dotenv": "^8.2.0",
+      "ejs": "^3.0.2",
+      "express": "^4.17.1",
+      "mongodb": "^3.5.5",
+      "pm2": "^4.2.3"
+    },
+    "devDependencies": {
+      "nodemon": "^2.0.2",
+      "rsync": "^0.6.1"
+    }
+    "author": "Parlier Thierry",
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/Angra974/world-capital-and-flag-api/issues"
+    },
+    "homepage": "https://github.com/Angra974/world-capital-and-flag-api#readme"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

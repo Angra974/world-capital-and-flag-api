@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>World capital Api</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+       <div class="container">
+           <p id="filterResult"></p>
+           <form action="/api/filter" method="POST">
+                              <input type="text" name="search" id="search" placeholder="Enter a capital name" />
+                              <p>
+               <input type="radio" name="filter" value="country" />Country [ Search a country by his capital name : exemple => type Algiers to get Algeria ]
+               </p>
+               <p>
+               <input type="radio" name="filter" value="capital" />Capital  [ Search a capital by his country name]</p>
+               <button type="submit">Submit</button>
+
+           </form>
+           <button type="button" id="showAllCountries" >Show all countries</button>
+           <button type="button" id="showAllCapitals" >Show all capitals</button>
+           <button type="button" id="showAllCountriesAndCapitals" >Show all countries with their capital</button>
+           <div id="showAll"></div>
+        </div>
+
+        <script src="main.js" async defer></script>
+    </body>
+</html>

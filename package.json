@@ -1,0 +1,39 @@
+{
+  "name": "world-capital-and-flag-api",
+  "version": "1.0.0",
+  "description": "Question our api to get the flag or the capital town of every country in the world.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node pm2.js",
+    "restart": "node pm2.js crud-demo --update-env",
+    "dev": "nodemon server.js",
+    "sync": "node sync.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Angra974/world-capital-and-flag-api.git"
+  },
+  "keywords": [
+    "world",
+    "flag",
+    "api"
+  ],
+   "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.0.2",
+    "express": "^4.17.1",
+    "mongodb": "^3.5.5",
+    "pm2": "^4.2.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2",
+    "rsync": "^0.6.1"
+  },
+  "author": "Parlier Thierry",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Angra974/world-capital-and-flag-api/issues"
+  },
+  "homepage": "https://github.com/Angra974/world-capital-and-flag-api#readme"
+}
