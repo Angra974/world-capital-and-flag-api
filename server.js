@@ -3,19 +3,23 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const MongoClient = require('mongodb').MongoClient //({useUnifiedTopology: true});
 const fs = require('fs');
-
-
+const fsPromises = require('fs/promises')
 const app = new express();
+
+
+const PORT = 3000;
 
 // use template to generate the data list for all countries if necessary
 // app.set('view engine','ejs')
 app.use(bodyParser.urlencoded({ extended: true}))
-
 // serve files in public folder as resource for the page.
 app.use(express.static('public'));
 app.use(bodyParser.json())
-app.listen('3000',()=> console.log('listen to 3000'));
-const fsPromises = require('fs/promises')
+
+
+app.listen(process.env.PORT || PORT, ()=>{
+    console.log(`The server is now running on port ${PORT}!`)
+})
 
 function getKeyByValue(object, value) {
             return Object.keys(object).find(key =>
@@ -77,3 +81,4 @@ main();
 app.get('/', (req, res) => {
 	res.sendFile(__dirname + '/index.html')
 })
+
