@@ -19,12 +19,17 @@
        <div class="container">
            <p id="filterResult"></p>
            <form action="/api/filter" method="POST">
-                              <input type="text" name="search" id="search" placeholder="Enter a capital name" />
+                              <input type="text" name="search" id="search" placeholder="Enter a capital name" required="required" />
                               <p>
-               <input type="radio" name="filter" value="country" />Country [ Search a country by his capital name : exemple => type Algiers to get Algeria ]
+               <input type="radio" name="filter" value="capital" />Country [ Search a country by his capital name : exemple => type Algiers to get Algeria ]
                </p>
                <p>
-               <input type="radio" name="filter" value="capital" />Capital  [ Search a capital by his country name]</p>
+               <input type="radio" name="filter" value="country" />Capital  [ Search a capital by his country name]</p>
+                              <p>
+               <input type="radio" name="filter" value="alpha2" />Country [ Search a country by his capital name : exemple => type Algiers to get Algeria ]
+               </p>
+               <p>
+               <input type="radio" name="filter" value="alpha3" />Capital  [ Search a capital by his country name]</p>
                <button type="submit">Submit</button>
 
            </form>

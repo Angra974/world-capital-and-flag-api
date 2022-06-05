@@ -51,7 +51,7 @@ submit.addEventListener('click', (el) => {
 showAllCapitals.addEventListener('click', (el) => {
   //? Prevent form submission and reload of the page;
   el.preventDefault();
-  getApiData('/api/list',{filter: 'capitals'},document.getElementById('showAll'))
+  getApiData('/api/list',{filter: 'capital'},document.getElementById('showAll'))
 })
 
 /**
@@ -60,7 +60,7 @@ showAllCapitals.addEventListener('click', (el) => {
 showAllCountries.addEventListener('click', (el) => {
   //? Prevent form submission and reload of the page;
   el.preventDefault();
-  getApiData('/api/list',{filter: 'countries'},document.getElementById('showAll'))
+  getApiData('/api/list',{filter: 'country'},document.getElementById('showAll'))
 })
 
 /**

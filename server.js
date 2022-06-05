@@ -6,9 +6,7 @@ const fs = require('fs');
 const fsPromises = require('fs/promises')
 const app = new express();
 
-
 const PORT = 3000;
-
 // use template to generate the data list for all countries if necessary
 // app.set('view engine','ejs')
 app.use(bodyParser.urlencoded({ extended: true}))
@@ -16,15 +14,11 @@ app.use(bodyParser.urlencoded({ extended: true}))
 app.use(express.static('public'));
 app.use(bodyParser.json())
 
-
 app.listen(process.env.PORT || PORT, ()=>{
     console.log(`The server is now running on port ${PORT}!`)
 })
 
-function getKeyByValue(object, value) {
-            return Object.keys(object).find(key =>
-                    object[key].toLowerCase() === value.toLowerCase());
-        }
+
 
 const main = async () => {
   try {
@@ -34,36 +28,35 @@ const main = async () => {
     // Turn it to an object
     const obj = JSON.parse(data);
 
+	// filter by alpha2, alpha3 code, capital or country to get the desired result
 	app.post('/api/filter',(req, res) => {
 	//	console.log(req.body)
-		if(req.body?.filter) {
-			const filter = req.body?.filter;
-			if(filter === 'capital') {
-			res.json({capital: obj[req.body?.search]});
-			} else if (filter === 'country') {
-				res.json({country: getKeyByValue(obj,req.body?.search)})
-			}
-			else {
-				res.json({});
-			}
+		if(req.body?.filter && req.body.search.length > 0) {
+			const result = Object.values(obj).filter( item =>
+				item[req.body?.filter].toLowerCase() === req.body?.search.toLowerCase()
+			)
+			res.json(result);
 		} else {
 			res.json({});
 		}
 		res.end()
 	});
 
-
+	// get list of all capitals, alpha code2, alpha code 3, countries or all the data from database.
 	app.post('/api/list', (req, res) => {
 		let objResult;
-		if(req.body?.filter === 'capitals') {
-			objResult = Object.values(obj).map((val) => {
-			return val;
-			});
-			return res.json(objResult);
-		} else if(req.body?.filter === 'countries') {
-			objResult = Object.keys(obj).map((key) => {
-			return key;
-			});
+		// user need to add a search, don't let empty string give a result
+		if(req.body?.filter) {
+			if(req.body?.filter !== {}) {
+				objResult = Object.values(obj).map((val) => {
+					return val[req.body?.filter];
+					});
+				} else {
+					// return all capital and countries
+					objResult = Object.values(obj).map((val) => {
+						return	{ country: val['country'], capital: val['capital']};
+					});
+				}
 			return res.json(objResult);
 		}
 		res.json(obj);
