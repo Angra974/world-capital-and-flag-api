@@ -1,4 +1,6 @@
-const submit = document.querySelector('button[type="submit"]');
+const submit = document.querySelector('#submit');
+const submitFlag = document.querySelector('#submitFlag');
+const submitRandom = document.querySelector('#submitRandom');
 const showAllCountriesAndCapitals = document.getElementById('showAllCountriesAndCapitals');
 const showAllCountries = document.getElementById('showAllCountries');
 const showAllCapitals = document.getElementById('showAllCapitals');
@@ -44,6 +46,39 @@ submit.addEventListener('click', (el) => {
     };
     getApiData('/api/filter',obj,document.getElementById('filterResult'));
 })
+
+/**
+ * get the flag based on a country or a capital name
+ */
+submitFlag.addEventListener('click', (el) => {
+  //? Prevent form submission and reload of the page;
+  el.preventDefault();
+  const search = document.getElementById('searchFlag').value;
+  const filter = document.querySelector('input[name="filterFlag"]:checked').value;
+  const size = document.querySelector('input[name="imgSize"]:checked').value;
+    // Adding body or contents to send
+    obj = {
+        search: search,
+        filter: filter,
+        size: size
+    };
+    getApiData('/api/flag',obj,document.getElementById('filterResult'));
+})
+
+/**
+ * get the flag based on a country or a capital name
+ */
+submitRandom.addEventListener('click', (el) => {
+  //? Prevent form submission and reload of the page;
+  el.preventDefault();
+  const random = document.getElementById('randomNumber').value;
+    // Adding body or contents to send
+    obj = {
+        number: random,
+    };
+    getApiData('/api/random',obj,document.getElementById('filterResult'));
+})
+
 
 /**
  * retrieve all the capitals name

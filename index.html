@@ -18,6 +18,16 @@
         <![endif]-->
        <div class="container">
            <p id="filterResult"></p>
+
+
+            <form action="/api/random" method="POST">
+                <fieldset legend="Random">
+                    <label><input type="text" name="randomNumber" id="randomNumber" value="" placeholder="Random number" />Input a random number</label>
+                    <button type="submit" id="submitRandom">Submit</button>
+                </fieldset>
+            </form>
+
+
            <form action="/api/filter" method="POST">
                               <input type="text" name="search" id="search" placeholder="Enter a capital name" required="required" />
                               <p>
@@ -30,8 +40,25 @@
                </p>
                <p>
                <input type="radio" name="filter" value="alpha3" />Capital  [ Search a capital by his country name]</p>
-               <button type="submit">Submit</button>
-
+               <button type="submit" id="submit">Submit</button>
+           </form>
+            <form action="/api/flag" method="POST">
+                <input type="text" name="search" id="searchFlag" placeholder="Enter a capital/Country/Code" required="required" />
+                              <p>
+               <input type="radio" name="filterFlag" value="capital" />Country [ Search a country by his capital name : exemple => type Algiers to get Algeria ]
+               </p>
+               <p>
+               <input type="radio" name="filterFlag" value="country" />Capital  [ Search a capital by his country name]</p>
+                              <p>
+               <input type="radio" name="filterFlag" value="alpha2" />Country [ Search a country by his capital name : exemple => type Algiers to get Algeria ]
+               </p>
+               <p>
+               <input type="radio" name="filterFlag" value="alpha3" />Capital  [ Search a capital by his country name]</p>
+               <label><input type="radio" name="imgSize" value="s" checked="checked" />Small</label>
+               <label><input type="radio" name="imgSize" value="m" />Medium</label>
+               <label><input type="radio" name="imgSize" value="l" />Large</label>
+                <input type="radio" name="imgSize" value="xl" />Extra large</label>
+               <button type="submit" id="submitFlag">Submit</button>
            </form>
            <button type="button" id="showAllCountries" >Show all countries</button>
            <button type="button" id="showAllCapitals" >Show all capitals</button>
