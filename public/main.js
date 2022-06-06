@@ -55,12 +55,12 @@ submitFlag.addEventListener('click', (el) => {
   el.preventDefault();
   const search = document.getElementById('searchFlag').value;
   const filter = document.querySelector('input[name="filterFlag"]:checked').value;
-  const size = document.querySelector('input[name="imgSize"]:checked').value;
+  const imgSize = document.querySelector('input[name="imgSize"]:checked').value;
     // Adding body or contents to send
     obj = {
         search: search,
         filter: filter,
-        size: size
+        imgSize: imgSize
     };
     getApiData('/api/flag',obj,document.getElementById('filterResult'));
 })
@@ -104,5 +104,5 @@ showAllCountries.addEventListener('click', (el) => {
 showAllCountriesAndCapitals.addEventListener('click', (el) => {
   //? Prevent form submission and reload of the page;
   el.preventDefault();
-  getApiData('/api/list',{},document.getElementById('showAll'))
+  getApiData('/api/list',{filter: 'both'},document.getElementById('showAll'))
 })
