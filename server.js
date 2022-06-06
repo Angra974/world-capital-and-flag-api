@@ -45,12 +45,15 @@ const main = async () => {
         app.post('/api/filter', (req, res) => {
             //	console.log(req.body)
             if (req.body?.filter && req.body.search.length > 0) {
+				let filter = req.body.filter;
+				let search = req.body.search;
+
                 // if data exists in localstorage
                 if (store.has(`filter-search-${filter}-${search}`)) {
                     return res.json(store.get(`filter-search-${filter}-${search}`));
                 }
                 const result = Object.values(obj).filter(item =>
-                    item[req.body?.filter].toLowerCase() === req.body?.search.toLowerCase()
+                    item[filter].toLowerCase() === search.toLowerCase()
                 )
                 // add in localstorage
                 store.set(`filter-search-${filter}-${search}`, result);
